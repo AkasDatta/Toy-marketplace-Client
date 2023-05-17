@@ -1,7 +1,6 @@
 .segment-two ul li a:hover {
     transition: 0.5s;
     transform: translateX(10px);
-    color: #f379a7;
   }
 
   .fa{
