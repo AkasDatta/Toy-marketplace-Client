@@ -10,7 +10,7 @@ const BeneFit = () => {
       <h1 className="text-center my-5 fw-bold" style={{ color: '#7fa7e4' }}>Our Benefits</h1>
         <Row className="row-cols-1 row-cols-md-3 g-4 text-center mb-5">
             <Col>
-                <Card className='h-100 py-5'>
+                <Card className='h-100 py-5 benefit-card'>
                     <div className='text-center fas'>
                         <FaCar size={40}></FaCar>
                     </div>
@@ -23,7 +23,7 @@ const BeneFit = () => {
                 </Card>
             </Col>
             <Col>
-                <Card className="h-100 py-5">
+                <Card className="h-100 py-5 benefit-card">
                     <div className='text-center fas'>
                         <FaRegClock size={40}></FaRegClock>
                     </div>
@@ -36,7 +36,7 @@ const BeneFit = () => {
                 </Card>
             </Col>
             <Col>
-                <Card className="h-100 py-5">
+                <Card className="h-100 py-5 benefit-card">
                     <div className='text-center fas'>
                         <FaDollarSign size={40}></FaDollarSign>
                     </div>
