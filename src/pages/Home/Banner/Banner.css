@@ -1,0 +1,29 @@
+#banner{
+    background-color: #f9acb9;
+    min-height: 500px;
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.banner-text button {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+.banner-text button:hover {
+    background-color: #95B3E0;
+    color: white;
+}
+  
+h1{
+    font-size: 50px;
+}
+img{
+    width: 100%;
+}

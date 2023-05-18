@@ -1,17 +1,13 @@
 .navbar .nav-link:hover{
     color: #f379a7;
 }
-Navbar.Brand{
-    color: #f379a7;
-}
-
 .custom-button {
     background-color: transparent;
     color: black;
     border-color: #f379a7;
     transition: background-color 0.3s ease;
 }
-  
+
 .custom-button:hover {
     background-color: #f04a8a;
     border-color: #811941;

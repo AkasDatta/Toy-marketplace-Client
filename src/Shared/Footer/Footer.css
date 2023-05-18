@@ -1,9 +1,17 @@
 .segment-two ul li a:hover {
     transition: 0.5s;
     transform: translateX(10px);
-  }
+}
 
-  .fa{
+.fa{
     margin-left: 20px;
     color: #f379a7;
-  }
+}
+.fa:hover{
+  transition: 0.5s;
+  transform: translateY(-10px);
+}
+  .logo-image-footer{
+    width: 75px;
+    padding-bottom: 10px;
+}

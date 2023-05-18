@@ -3,6 +3,7 @@ import { Nav } from 'react-bootstrap/esm';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Footer.css'
+import toysLogo from '../../assets/toys_logo.png';
 
 const Footer = () => {
     return (
@@ -14,7 +15,8 @@ const Footer = () => {
                         <Col md={2} sm={12} xs={12} className="segment-one md-mb-30 sm-mb-30">
                         <h2 className='fw-bold'>
                         <a className='text-decoration-none' href="#home">
-                            <span style={{ color: '#F379A7' }}>ToyVerse</span>
+                        <img src={toysLogo} alt="" className="logo-image-footer" />
+                            <span style={{ color: '#F379A7' }}>Verse</span>
                         </a>
                         </h2>
                         <p>
