@@ -88,6 +88,9 @@ const Footer = () => {
                     </Row>
                     </Container>
                 </div>
+                <div className='text-center footer-down'>
+                    <p className="pt-3">Copyright © 2023 Akas Datta</p>
+                </div>
             </footer>
         </div>
     );

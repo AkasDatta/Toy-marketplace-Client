@@ -2,7 +2,6 @@
     transition: 0.5s;
     transform: translateX(10px);
 }
-
 .fa{
     margin-left: 20px;
     color: #f379a7;
@@ -11,7 +10,11 @@
   transition: 0.5s;
   transform: translateY(-10px);
 }
-  .logo-image-footer{
+.logo-image-footer{
     width: 75px;
     padding-bottom: 10px;
+}
+.footer-down{
+  background-color: #373737;
+  min-height: 50px;
 }
