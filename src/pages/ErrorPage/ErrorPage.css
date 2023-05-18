@@ -1,0 +1,14 @@
+.error{
+    margin-top: 150px;
+}
+.no-decoration{
+    text-decoration: none;
+}
+.error button{
+    border: #fb0404;
+}
+.errorImg{
+    width: 15%;
+    height: 15%;
+    margin-bottom: 20px;
+}
