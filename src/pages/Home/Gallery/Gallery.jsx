@@ -18,24 +18,24 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="gallery container">
-    <div className='text-center'>
-      <img className='img-fluid w-25' src={galleryImage} alt="" />
-    </div>
-    <div className="row">
-      {images.map((image) => (
-        <div key={image.id} className="col-md-6 col-lg-4">
-          <div className="gallery-item">
-            <img src={image.src} alt={image.alt} className="gallery-image" />
-            <div className="overlay">
-              <div className="overlay-content">
-                <h4>{image.alt}</h4>
-              </div>
-            </div>
-          </div>
+    <div className="gallery container" data-aos="zoom-in-up">
+        <div className='text-center'>
+            <img className='img-fluid w-25' src={galleryImage} alt="" />
         </div>
-      ))}
-    </div>
+        <div className="row">
+        {images.map((image) => (
+            <div key={image.id} className="col-md-6 col-lg-4">
+            <div className="gallery-item">
+                <img src={image.src} alt={image.alt} className="gallery-image" />
+                <div className="overlay">
+                <div className="overlay-content">
+                    <h4>{image.alt}</h4>
+                </div>
+                </div>
+            </div>
+            </div>
+        ))}
+        </div>
   </div> 
   );
 };
