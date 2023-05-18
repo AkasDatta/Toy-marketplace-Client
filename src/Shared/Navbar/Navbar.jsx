@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import './Navbar.css';
 import toysLogo from '../../assets/toys_logo.png';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [navbarShadow, setNavbarShadow] = useState(false);
@@ -40,9 +41,13 @@ const NavBar = () => {
             <Navbar.Toggle aria-controls="navbarScroll"></Navbar.Toggle>
             <Navbar.Collapse id="navbarScroll">
               <Nav className="mx-auto my-2 my-lg-0">
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">All Toys</Nav.Link>
-                <Nav.Link href="#action2">Blogs</Nav.Link>
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/">Home</Nav.Link>
+                </Nav.Item>
+                <Nav.Link  as={Link} to="/">All Toys</Nav.Link>
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/blogs">Blog </Nav.Link>
+                </Nav.Item>
               </Nav>
               <Button className="custom-button btn-danger">Login</Button>
             </Navbar.Collapse>

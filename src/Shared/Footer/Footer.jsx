@@ -89,7 +89,7 @@ const Footer = () => {
                     </Container>
                 </div>
                 <div className='text-center footer-down'>
-                    <p className="pt-3">Copyright © 2023 Akas Datta</p>
+                    <p className="pt-3">Copyright © 2023 <a className='text-decoration-none' style={{color: '#f379a7'}} href="https://medium.com/@akasdatta">Akas Datta</a> </p>
                 </div>
             </footer>
         </div>
