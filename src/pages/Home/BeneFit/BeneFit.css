@@ -1,0 +1,13 @@
+.card {
+    transition: border 0.3s ease-in-out;
+}
+.card:hover {
+    border: 5px solid #f9acb9;
+}
+.fas{
+    color: #494949;
+}
+.title{
+    color: #494949;
+    font-weight: bold;
+}
