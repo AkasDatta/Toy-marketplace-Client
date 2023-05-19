@@ -1,14 +1,20 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Col, Container, Image, Button, Form } from 'react-bootstrap';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleImage from '../../../assets/google.png';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
     const [show, setShow] = useState(false);
+    const {signIn, signInWithGoogle} = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    // console.log('Login page location', location)
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -27,7 +33,33 @@ const Login = () => {
             return;
         }
 
-    };
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            navigate(from, {replace: true});
+            setError('');
+            setSuccess('User has been created successfully');
+        })
+        .catch(error => {
+            console.log(error);
+        })
+
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            navigate(from, {replace: true});
+            console.log(loggedUser)
+            setError('');
+            setSuccess('User has been created successfully');
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
 
     return (
         <div className='login'>
@@ -44,7 +76,7 @@ const Login = () => {
                     <Container className='p-5'>
                         <h2 className='text-center'>USER LOGIN</h2>
                         <span>Don't Have an Account? <Link to="/register">Register</Link> </span>
-                        <a href="#" className="google-link">
+                        <a onClick={handleGoogleSignIn} href="#" className="google-link">
                             <Image src={googleImage} alt="Google" />Continue with Google
                         </a>
                         <h4>or</h4>
