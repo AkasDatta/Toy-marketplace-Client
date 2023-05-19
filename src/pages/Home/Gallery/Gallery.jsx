@@ -18,11 +18,11 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="gallery container" data-aos="zoom-in-up">
-        <div className='text-center'>
+    <div className="gallery container">
+        <div className='text-center' data-aos="zoom-in-up">
             <img className='img-fluid w-25' src={galleryImage} alt="" />
         </div>
-        <div className="row">
+        <div className="row" data-aos="fade-down-left">
         {images.map((image) => (
             <div key={image.id} className="col-md-6 col-lg-4">
             <div className="gallery-item">
