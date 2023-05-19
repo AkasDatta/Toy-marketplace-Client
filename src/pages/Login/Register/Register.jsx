@@ -1,14 +1,20 @@
-import { useState } from 'react';
-import { Col, Container, Image, Button, Form } from 'react-bootstrap';
+import { useContext, useState } from 'react';
+import { Col, Container, Image, Button, Form, Row } from 'react-bootstrap';
 import './Register.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import googleImage from '../../../assets/google.png';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const [show, setShow] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const navigate = useNavigate();
+    const {createUser, signInWithGoogle} = useContext(AuthContext);
+    const [accepted, setAccepted] = useState(false);
+    const from = location.state?.from?.pathname || '/';
 
     const handleRegister = event => {
         event.preventDefault();
@@ -28,7 +34,52 @@ const Register = () => {
             setError('Please add at least 6 characters in your password')
             return;
         }
-    };
+
+        createUser(email, password)
+        .then(result => {
+            const createdUser = result.user;
+            console.log(createdUser)
+            setError('');
+            setSuccess('User has been created successfully');
+            updateUserData(createdUser, name, photo); // pass createdUser object instead of createUser function
+            navigate(from, {replace: true});
+        })
+        .catch(error => {
+            console.log(error)
+            setError(error.message)
+        })
+    }
+
+    const updateUserData = (user, name, photo) => {
+        updateProfile(user, {
+          displayName: name,
+          photoURL: `${photo}?t=${Date.now()}`
+        })
+        .then(() => {
+          // handle success
+        })
+        .catch(error => {
+          setError(error.message);
+        })
+      }
+
+      const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            setError('');
+            setSuccess('User has been created successfully');
+            navigate(from, {replace: true});
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    const handleAccepted = event => {
+        setAccepted(event.target.checked)
+    }
 
     return (
         <div className='register'>
@@ -45,7 +96,7 @@ const Register = () => {
                 <Container className='p-5'>
                     <h2 className='text-center'>USER REGISTER</h2>
                     <span>Already Have an Account? <Link to="/login">Login</Link> </span>
-                    <a href="#" className="google-link">
+                    <a onClick={handleGoogleSignIn} href="#" className="google-link">
                         <Image src={googleImage} alt="Google" />Continue with Google
                     </a>
                     <h4>or</h4>
@@ -68,7 +119,14 @@ const Register = () => {
                         }
                         </p>
 
-                        <Button className="custom-button btn-danger" type="submit">Register Now</Button> <br />
+                        <Row>
+                            <div className='d-flex' name='accept'>
+                                <input onClick={handleAccepted} type="checkbox" defaultChecked />
+                                <span>I Agree to the <Link to="/terms">terms and conditions</Link></span>
+                            </div>
+                        </Row>
+
+                        <Button disabled={!accepted} className="custom-button btn-danger" type="submit">Register Now</Button> <br />
 
                         <Form.Text className="text-success">
                             {success}
