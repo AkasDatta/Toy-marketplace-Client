@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+import { Navbar, Container, Nav, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import './Navbar.css';
 import toysLogo from '../../assets/toys_logo.png';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,15 @@ const NavBar = () => {
     logOut()
         .then()
         .catch(error => console.log(error))
-}
+  }
+
+  const renderTooltip = () => {
+    return (
+      <Tooltip id="username-tooltip" style={{ color: 'red' }}>
+        {user.displayName}
+      </Tooltip>
+    );
+  };
 
 
   useEffect(() => {
@@ -61,9 +69,9 @@ const NavBar = () => {
               </Nav>
               {user && (
                   <Nav.Item>
-                    {/* <OverlayTrigger placement="bottom" overlay={renderTooltip()}> */}
-                        <img className="header-img m-2" src={user.photoURL} alt="" />
-                    {/* </OverlayTrigger> */}
+                    <OverlayTrigger placement="bottom" overlay={renderTooltip()}>
+                        <img className="navbar-img m-2" src={user.photoURL} alt="" />
+                    </OverlayTrigger>
                   </Nav.Item>
               )}
 
