@@ -6,7 +6,10 @@
     margin-left: 20px;
     color: #f379a7;
 }
-.fa:hover{
+.fash{
+    color: #f379a7;
+}
+.fa:hover, .fash:hover{
   transition: 0.5s;
   transform: translateY(-10px);
 }

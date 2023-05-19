@@ -67,10 +67,12 @@ const Footer = () => {
 
 
                         <Col md={3} sm={12} xs={12} className="segment-three sm-mb-30">
+                        <h5 className='fw-bold mb-3'>Contact Us</h5>
+                        <p>1203 Gulshan, Dhaka, Bangladesh <br />
+                        Email: info@toyverse.com <br />Phone: +880 123 456 7890</p>
                         <h5 className='fw-bold mb-3'>Follow Us</h5>
-                        <p> In a Toys Business context, getting in touch can be crucial for networking and building relationships with clients, partners, and colleagues. </p>
                         <div className='mb-3'>
-                            <a href="https://www.facebook.com/" target="_blank"><FaFacebook className='fa' size={20} /></a>
+                            <a href="https://www.facebook.com/" target="_blank"><FaFacebook className='fash' size={20} /></a>
                             <a href="https://twitter.com/" target="_blank"><FaTwitter className='fa' size={20} /></a>
                             <a href="https://www.linkedin.com/" target="_blank"><FaLinkedin className='fa' size={20} /></a>
                             <a href="https://www.instagram.com/" target="_blank"><FaInstagram className='fa' size={20} /></a>
