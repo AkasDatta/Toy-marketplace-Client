@@ -1,0 +1,91 @@
+.login{
+    background: #C0DFE8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15%;
+  }
+  .login-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-shadow: 0px 15px 15px  rgba(0, 0, 0, 0.2);
+}
+  .col-2 {
+    flex-basis: 50%;
+    flex-grow: 1;
+  }
+  .col-2 {
+    background: #fff;
+    /* padding: 40px 8%; */
+    color: #333;
+    min-width: 250px;
+  }
+  .col-2 h2 {
+    font-weight: 600;
+  }
+  .col-2 span, p {
+    font-size: 12px;
+  }
+  .col-2 span a {
+    text-decoration: none;
+    color: #ef005d;
+    font-weight: 500;
+  }
+  .google-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ef005d;
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
+    margin: 20px 0;
+  }
+  .google-link img {
+    width: 20px;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+  .col-2 h4 {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .input-field {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ef005d;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin: 5px 0 10px;
+  }
+  form label {
+    font-weight: 500;
+    font-size: 12px;
+  }
+.col-2 form button {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ef005d;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin: 18px 0 10px;
+    background: #ef005d;
+    color: #fff;
+    cursor: pointer;
+}
+.custom-button:hover {
+    background-color: #ef005d;
+    border-color: #811941;
+    color: white;
+}
+.FaEye{
+    margin-left: 10px;
+    color: #ef005d;
+  }

@@ -1,11 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import './Navbar.css';
 import toysLogo from '../../assets/toys_logo.png';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const NavBar = () => {
   const [navbarShadow, setNavbarShadow] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+        .then()
+        .catch(error => console.log(error))
+}
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,11 +40,12 @@ const NavBar = () => {
           className={navbarShadow ? 'navbar-shadow' : ''}
         >
           <Container>
-            <Navbar.Brand href="#" className="d-flex align-items-center">
+            <Navbar.Brand href="#" className="d-flex align-items-center"> <Link as={Link} to="/">
               <img src={toysLogo} alt="" className="logo-image" />
               <span className="fw-bold" style={{ color: '#F379A7' }}>
                 Verse
               </span>
+            </Link>
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="navbarScroll"></Navbar.Toggle>
@@ -49,7 +59,20 @@ const NavBar = () => {
                   <Nav.Link as={Link} to="/blogs">Blog </Nav.Link>
                 </Nav.Item>
               </Nav>
-              <Button className="custom-button btn-danger">Login</Button>
+              {user && (
+                  <Nav.Item>
+                    {/* <OverlayTrigger placement="bottom" overlay={renderTooltip()}> */}
+                        <img className="header-img m-2" src={user.photoURL} alt="" />
+                    {/* </OverlayTrigger> */}
+                  </Nav.Item>
+              )}
+
+              {user ? 
+                  <Button onClick={handleLogout}className="custom-button btn-danger">Logout</Button> :
+                  <Link to="/login">                                        
+                    <Button className="custom-button btn-danger">Login</Button>
+                  </Link>
+              }
             </Navbar.Collapse>
           </Container>
         </Navbar>
