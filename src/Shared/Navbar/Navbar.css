@@ -1,27 +1,35 @@
-.navbar .nav-link:hover{
+.navbar .nav-link:hover {
     color: #f379a7;
-}
-.custom-button {
+  }
+  
+  .custom-button {
     background-color: transparent;
     color: black;
     border-color: #f379a7;
     transition: background-color 0.3s ease;
-}
-
-.custom-button:hover {
+  }
+  
+  .custom-button:hover {
     background-color: #f04a8a;
     border-color: #811941;
     color: white;
-}
-
-.navbar-shadow {
+  }
+  
+  .navbar-shadow {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-.logo-image{
+  }
+  
+  .logo-image {
     width: 50px;
-}
-.navbar-img{
+  }
+  
+  .navbar-img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-}
+  }
+  
+  .no-underline {
+    text-decoration: none;
+  }
+  
