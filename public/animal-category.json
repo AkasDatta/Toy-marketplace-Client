@@ -1,0 +1,125 @@
+{
+    "toys": [
+      {
+        "id": 1,
+        "picture": "https://example.com/dog_toy1.jpg",
+        "name": "Dog Chew Toy",
+        "subcategory": "Dog Toys",
+        "price": 9.99,
+        "rating": 4.5,
+        "quantity": 10,
+        "description": "This durable chew toy is perfect for dogs who love to chew. It helps promote dental health and provides hours of entertainment."
+      },
+      {
+        "id": 2,
+        "picture": "https://example.com/cat_toy1.jpg",
+        "name": "Interactive Cat Toy",
+        "subcategory": "Cat Toys",
+        "price": 7.99,
+        "rating": 4.2,
+        "quantity": 15,
+        "description": "Keep your cat entertained with this interactive toy. It features feathers and a dangling ball to stimulate their natural hunting instincts."
+      },
+      {
+        "id": 3,
+        "picture": "https://example.com/bear_toy1.jpg",
+        "name": "Plush Bear Toy",
+        "subcategory": "Bear Toys",
+        "price": 12.99,
+        "rating": 4.7,
+        "quantity": 8,
+        "description": "This soft and cuddly bear toy is perfect for snuggling. It's made of high-quality materials and is safe for children of all ages."
+      },
+      {
+        "id": 4,
+        "picture": "https://example.com/dog_toy2.jpg",
+        "name": "Squeaky Dog Toy",
+        "subcategory": "Dog Toys",
+        "price": 6.99,
+        "rating": 4.0,
+        "quantity": 20,
+        "description": "This squeaky dog toy will keep your pup entertained. It's made of non-toxic materials and is suitable for small to medium-sized dogs."
+      },
+      {
+        "id": 5,
+        "picture": "https://example.com/cat_toy2.jpg",
+        "name": "Catnip Mouse Toy",
+        "subcategory": "Cat Toys",
+        "price": 5.99,
+        "rating": 4.3,
+        "quantity": 12,
+        "description": "Entice your cat with this catnip-filled mouse toy. It's lightweight and perfect for batting and pouncing."
+      },
+      {
+        "id": 6,
+        "picture": "https://example.com/bear_toy2.jpg",
+        "name": "Stuffed Bear Pillow",
+        "subcategory": "Bear Toys",
+        "price": 19.99,
+        "rating": 4.8,
+        "quantity": 5,
+        "description": "This oversized stuffed bear pillow is a great addition to any child's room. It's soft, huggable, and makes a perfect cuddle buddy."
+      },
+      {
+        "id": 7,
+        "picture": "https://example.com/dog_toy3.jpg",
+        "name": "Treat Dispensing Dog Toy",
+        "subcategory": "Dog Toys",
+        "price": 14.99,
+        "rating": 4.6,
+        "quantity": 9,
+        "description": "Challenge your dog's mind with this treat-dispensing toy. Fill it with your dog's favorite treats and watch them work to retrieve them."
+      },
+      {
+        "id": 8,
+        "picture": "https://example.com/cat_toy3.jpg",
+        "name": "Feather Teaser Wand",
+        "subcategory": "Cat Toys",
+        "price": 8.99,
+        "rating": 4.4,
+        "quantity": 18,
+        "description": "Engage your cat in interactive play with this feather teaser wand. It's designed to mimic the movement of prey and will keep your cat entertained for hours."
+      },
+      {
+        "id": 9,
+        "picture": "https://example.com/bear_toy3.jpg",
+        "name": "Talking Bear Plush Toy",
+        "subcategory": "Bear Toys",
+        "price": 16.99,
+        "rating": 4.9,
+        "quantity": 7,
+        "description": "This talking bear plush toy will delight children with its cute phrases and cuddly nature. It's the perfect companion for bedtime or playtime."
+      },
+      {
+        "id": 10,
+        "picture": "https://example.com/dog_toy4.jpg",
+        "name": "Rope Tug Toy",
+        "subcategory": "Dog Toys",
+        "price": 11.99,
+        "rating": 4.2,
+        "quantity": 14,
+        "description": "Play a game of tug-of-war with your dog using this durable rope toy. It's great for strengthening your dog's teeth and gums."
+      },
+      {
+        "id": 11,
+        "picture": "https://example.com/cat_toy4.jpg",
+        "name": "Cat Tower with Scratchers",
+        "subcategory": "Cat Toys",
+        "price": 29.99,
+        "rating": 4.7,
+        "quantity": 4,
+        "description": "Give your cat a place to play, scratch, and relax with this multi-level cat tower. It features built-in scratchers and cozy resting spots."
+      },
+      {
+        "id": 12,
+        "picture": "https://example.com/bear_toy4.jpg",
+        "name": "Musical Bear Plush Toy",
+        "subcategory": "Bear Toys",
+        "price": 22.99,
+        "rating": 4.6,
+        "quantity": 6,
+        "description": "This musical bear plush toy plays soothing melodies to help lull your child to sleep. It's soft, cuddly, and provides a comforting presence."
+      }
+    ]
+  }
+  

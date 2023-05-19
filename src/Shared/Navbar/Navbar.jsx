@@ -63,7 +63,7 @@ const NavBar = () => {
             <Nav.Item>
               <Nav.Link as={Link} to="/">Home</Nav.Link>
             </Nav.Item>
-            <Nav.Link as={Link} to="/">All Toys</Nav.Link>
+            <Nav.Link as={Link} to="/alltoys">All Toys</Nav.Link>
             <Nav.Item>
               <Nav.Link as={Link} to="/blogs">Blog </Nav.Link>
             </Nav.Item>
