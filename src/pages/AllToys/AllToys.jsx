@@ -80,8 +80,8 @@ const AllToys = () => {
             <div>
                 <img className='rounded' src={selectedToy.picture} alt="" />
                 <h5 className='mt-5'>{selectedToy.toyName}</h5>
-                <p>Seller Name: </p>
-                <p>Seller Email: </p>
+                {user && <p>Seller Name:   {user.displayName} </p>}
+                <p>Seller Email: {user.email} </p>
                 <p>Price: {selectedToy.price}</p>
                 <p>Rating: {selectedToy.rating}</p>
                 <p>Available Quantity: {selectedToy.quantity}</p>
