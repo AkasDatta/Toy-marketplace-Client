@@ -132,7 +132,7 @@ const AddToys = () => {
             <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="validationCustom03">
                 <Form.Label>Price</Form.Label>
-                <Form.Control type="text" placeholder="Price" name="price" required />
+                <Form.Control type="number" placeholder="Price" name="price" required />
                 <Form.Control.Feedback type="invalid">
                 Please provide your product price.
                 </Form.Control.Feedback>
@@ -141,7 +141,7 @@ const AddToys = () => {
                 <Form.Label>Rating</Form.Label>
                 <Form.Control
                 name="rating"
-                type="text"
+                type="number"
                 placeholder="Rating"
                 required
                 onChange={(e) => {
@@ -157,7 +157,7 @@ const AddToys = () => {
                 <Form.Label>Available Quantity</Form.Label>
                 <Form.Control
                 name="quantity"
-                type="text"
+                type="number"
                 placeholder="Available Quantity"
                 required
                 onChange={(e) => {

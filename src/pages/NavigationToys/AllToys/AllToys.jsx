@@ -31,6 +31,7 @@ const AllToys = () => {
 
   return (
     <div className='my-5 py-5'>
+      
       <h1 className="text-center my-5 fw-bold" style={{ color: '#7fa7e4' }}>All Toys Here</h1>
       <div className='d-flex justify-content-end container mb-4'>
         <Form action="/search" method="GET" className='d-flex'>

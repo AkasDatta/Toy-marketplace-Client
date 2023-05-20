@@ -7,12 +7,14 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [addtoys, setAddtoys] = useState([]);
+  const [error, setError] = useState(null);
 
   const url = `http://localhost:5000/addtoys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setAddtoys(data));
+      .then((data) => setAddtoys(data))
+      .catch((error) => setError(error));
   }, [url]);
 
   const handleDelete = (id) => {
@@ -73,12 +75,16 @@ const MyToys = () => {
     }
 }
 
-  return (
+return (
     <div className="my-5 py-5 container">
-      <h1 className="text-center my-5 fw-bold" style={{ color: "#7fa7e4" }}>
-        My Toys Here
-      </h1>
-      <Table striped bordered hover size="sm">
+      {error ? (
+        <div>Error: {error.message}</div>
+      ) : (
+        <>
+          <h1 className="text-center my-5 fw-bold" style={{ color: "#7fa7e4" }}>
+            My Toys Here
+          </h1>
+          <Table striped bordered hover size="sm">
         <thead>
           <tr>
             <th>Photo</th>
@@ -104,7 +110,9 @@ const MyToys = () => {
             ></MyToysRow>
           ))}
         </tbody>
-      </Table>
+        </Table>
+        </>
+      )}
     </div>
   );
 };

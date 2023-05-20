@@ -8,7 +8,7 @@ const ShopByCategory = () => {
 
             <Tabs>
                 <TabList>
-                    <Tab>Category 1</Tab>
+                    <Tab>Dog </Tab>
                     <Tab>Category 2</Tab>
                     <Tab>Category 3</Tab>
                 </TabList>
