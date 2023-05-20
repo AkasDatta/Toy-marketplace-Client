@@ -7,7 +7,6 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import Terms from "../pages/Login/Terms/Terms";
 import AllToys from "../pages/NavigationToys/AllToys/AllToys";
-import PrivateRoute from "./PrivateRoute";
 import AddToys from "../pages/NavigationToys/AddToys/AddToys";
 import MyToys from "../pages/NavigationToys/MyToys/MyToys";
 

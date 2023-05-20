@@ -16,7 +16,7 @@ const Testimonial = () => {
                 </div>
 
                 <Row className="row-cols-1 row-cols-md-3 g-4 mb-5" data-aos="fade-up"
-                data-aos-duration="1000">
+                data-aos-duration="500">
                     <Col>
                         <Card className='py-3'>
                             <Card.Body className='text-center'>

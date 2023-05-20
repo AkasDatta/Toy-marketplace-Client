@@ -19,12 +19,13 @@ const Gallery = () => {
 
   return (
     <div className="gallery container">
-        <div className='text-center' data-aos="zoom-in-up">
+        <div className='text-center' data-aos="fade-up"
+   >
             <img className='img-fluid w-25' src={galleryImage} alt="" />
         </div>
-        <div className="row" data-aos="fade-down-left">
+        <div className="row">
         {images.map((image) => (
-            <div key={image.id} className="col-md-6 col-lg-4">
+            <div key={image.id} className="col-md-6 col-lg-4" data-aos="zoom-in"   data-aos-duration="500">
             <div className="gallery-item">
                 <img src={image.src} alt={image.alt} className="gallery-image" />
                 <div className="overlay">
