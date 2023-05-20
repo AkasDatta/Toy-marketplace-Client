@@ -1,9 +1,8 @@
-{
-    "toys": [
+[
       {
         "id": 1,
-        "picture": "https://example.com/dog_toy1.jpg",
-        "name": "Dog Chew Toy",
+        "picture": "https://images.unsplash.com/photo-1530325553241-4f6e7690cf36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "toyName": "Dog Chew Toy",
         "subcategory": "Dog Toys",
         "price": 9.99,
         "rating": 4.5,
@@ -12,8 +11,8 @@
       },
       {
         "id": 2,
-        "picture": "https://example.com/cat_toy1.jpg",
-        "name": "Interactive Cat Toy",
+        "picture": "https://images.unsplash.com/photo-1581312742770-ce89199554af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Interactive Cat Toy",
         "subcategory": "Cat Toys",
         "price": 7.99,
         "rating": 4.2,
@@ -22,8 +21,8 @@
       },
       {
         "id": 3,
-        "picture": "https://example.com/bear_toy1.jpg",
-        "name": "Plush Bear Toy",
+        "picture": "https://images.unsplash.com/photo-1543886151-3bc2b944c718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Plush Bear Toy",
         "subcategory": "Bear Toys",
         "price": 12.99,
         "rating": 4.7,
@@ -32,8 +31,8 @@
       },
       {
         "id": 4,
-        "picture": "https://example.com/dog_toy2.jpg",
-        "name": "Squeaky Dog Toy",
+        "picture": "https://images.unsplash.com/photo-1556012018-50c5c0da73bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Squeaky Dog Toy",
         "subcategory": "Dog Toys",
         "price": 6.99,
         "rating": 4.0,
@@ -42,8 +41,8 @@
       },
       {
         "id": 5,
-        "picture": "https://example.com/cat_toy2.jpg",
-        "name": "Catnip Mouse Toy",
+        "picture": "https://images.unsplash.com/photo-1601361364273-82f1797728b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Catnip Mouse Toy",
         "subcategory": "Cat Toys",
         "price": 5.99,
         "rating": 4.3,
@@ -52,8 +51,8 @@
       },
       {
         "id": 6,
-        "picture": "https://example.com/bear_toy2.jpg",
-        "name": "Stuffed Bear Pillow",
+        "picture": "https://images.unsplash.com/photo-1540981412106-6de4e3c1fc92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Stuffed Bear Pillow",
         "subcategory": "Bear Toys",
         "price": 19.99,
         "rating": 4.8,
@@ -62,8 +61,8 @@
       },
       {
         "id": 7,
-        "picture": "https://example.com/dog_toy3.jpg",
-        "name": "Treat Dispensing Dog Toy",
+        "picture": "https://images.unsplash.com/photo-1538292999061-16ca3647ab1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1071&q=80",
+        "toyName": "Treat Dispensing Dog Toy",
         "subcategory": "Dog Toys",
         "price": 14.99,
         "rating": 4.6,
@@ -72,8 +71,8 @@
       },
       {
         "id": 8,
-        "picture": "https://example.com/cat_toy3.jpg",
-        "name": "Feather Teaser Wand",
+        "picture": "https://images.unsplash.com/photo-1585508033002-1ff8b3fee7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Feather Teaser Wand",
         "subcategory": "Cat Toys",
         "price": 8.99,
         "rating": 4.4,
@@ -82,8 +81,8 @@
       },
       {
         "id": 9,
-        "picture": "https://example.com/bear_toy3.jpg",
-        "name": "Talking Bear Plush Toy",
+        "picture": "https://images.unsplash.com/photo-1562040551-9a7242202cc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=837&q=80",
+        "toyName": "Talking Bear Plush Toy",
         "subcategory": "Bear Toys",
         "price": 16.99,
         "rating": 4.9,
@@ -92,8 +91,8 @@
       },
       {
         "id": 10,
-        "picture": "https://example.com/dog_toy4.jpg",
-        "name": "Rope Tug Toy",
+        "picture": "https://images.unsplash.com/photo-1592059852026-d6ed580b8c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Rope Tug Toy",
         "subcategory": "Dog Toys",
         "price": 11.99,
         "rating": 4.2,
@@ -102,8 +101,8 @@
       },
       {
         "id": 11,
-        "picture": "https://example.com/cat_toy4.jpg",
-        "name": "Cat Tower with Scratchers",
+        "picture": "https://images.unsplash.com/photo-1592059851980-05470a807b01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Singing Cat Toy",
         "subcategory": "Cat Toys",
         "price": 29.99,
         "rating": 4.7,
@@ -112,14 +111,12 @@
       },
       {
         "id": 12,
-        "picture": "https://example.com/bear_toy4.jpg",
-        "name": "Musical Bear Plush Toy",
+        "picture": "https://images.unsplash.com/photo-1508076092314-77ad4b6b360a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "toyName": "Musical Bear Plush Toy",
         "subcategory": "Bear Toys",
         "price": 22.99,
         "rating": 4.6,
         "quantity": 6,
         "description": "This musical bear plush toy plays soothing melodies to help lull your child to sleep. It's soft, cuddly, and provides a comforting presence."
       }
-    ]
-  }
-  
+]

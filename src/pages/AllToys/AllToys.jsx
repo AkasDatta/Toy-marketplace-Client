@@ -1,50 +1,100 @@
-import { Button, Form } from 'react-bootstrap';
-import Table from 'react-bootstrap/Table';
+import { Table, Button, Form, Modal } from 'react-bootstrap';
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 import './AllToys.css';
 
 const AllToys = () => {
+  const [allToys, setAllToys] = useState([]);
+  const [selectedToy, setSelectedToy] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+
+  const { user } = useContext(AuthContext); 
+
+  useEffect(() => {
+    fetch('animal-category.json')
+      .then((res) => res.json())
+      .then((data) => setAllToys(data));
+  }, []);
+
+  const handleDetailsClick = (toy) => {
+    if (user) {
+      setSelectedToy(toy);
+      setShowModal(true);
+    } else {
+      navigate('/login');
+    }
+  };
+
+  const displayedToys = allToys.slice(0, 20);
+
   return (
     <div className='my-5 py-5'>
       <h1 className="text-center my-5 fw-bold" style={{ color: '#7fa7e4' }}>All Toys Here</h1>
       <div className='d-flex justify-content-end container mb-4'>
         <Form action="/search" method="GET" className='d-flex'>
           <div>
-            <input className='input-field-alltoys' type="text" name="query" placeholder="Enter your search query" />
+            <input className='input-field-alltoys' type="text" name="query" placeholder="Type here" />
           </div>
           <div>
-            <Button type="submit" className='btn-danger mx-2 p-2'>Search</Button>
+            <Button type="submit" className='btn-danger mx-2 p-2'>Sorting</Button>
           </div>
         </Form>
       </div>
       <Table striped bordered hover size="sm" className='container'>
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>SELLER NAME</th>
+            <th>TOY NAME</th>
+            <th>SUB CATEGORY</th>
+            <th>PRICE</th>
+            <th>AVAILABLE QUANTITY</th>
+            <th>VIEW DETAILS</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan={2}>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {displayedToys.map((toy, id) => (
+            <tr key={id}>
+              <td>{toy.sellerName}</td>
+              <td>{toy.toyName}</td>
+              <td>{toy.subcategory}</td>
+              <td>{toy.price}</td>
+              <td>{toy.quantity}</td>
+              <td className='text-center'>
+                <button className='btn btn-secondary px-3 py-1' onClick={() => handleDetailsClick(toy)}>Details</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
+
+      {/* Modal */}
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Toy Details</Modal.Title>
+        
+        </Modal.Header>
+        <Modal.Body>
+          {selectedToy && (
+            <div>
+                <img className='rounded' src={selectedToy.picture} alt="" />
+                <h5 className='mt-5'>{selectedToy.toyName}</h5>
+                <p>Seller Name: </p>
+                <p>Seller Email: </p>
+                <p>Price: {selectedToy.price}</p>
+                <p>Rating: {selectedToy.rating}</p>
+                <p>Available Quantity: {selectedToy.quantity}</p>
+                <p>Description: {selectedToy.description}</p>
+            </div>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
