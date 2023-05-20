@@ -60,13 +60,25 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbarScroll"></Navbar.Toggle>
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mx-auto my-2 my-lg-0">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Link as={Link} to="/alltoys">All Toys</Nav.Link>
-            <Nav.Item>
-              <Nav.Link as={Link} to="/blogs">Blog </Nav.Link>
-            </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link as={Link} to="/">Home</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link as={Link} to="/alltoys">All Toys</Nav.Link>
+              </Nav.Item>
+              {user && (
+                <>
+                     <Nav.Item>
+                        <Nav.Link as={Link} to="/mytoys">My Toys</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link as={Link} to="/addtoys">Add Toys</Nav.Link>
+                    </Nav.Item>
+                </>
+              )}
+              <Nav.Item>
+                  <Nav.Link as={Link} to="/blogs">Blog</Nav.Link>
+              </Nav.Item>
           </Nav>
           {user && (
             <Nav.Item>

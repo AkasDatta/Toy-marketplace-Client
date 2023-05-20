@@ -1,7 +1,7 @@
 import { Table, Button, Form, Modal } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../providers/AuthProvider';
+import { AuthContext } from '../../../providers/AuthProvider';
 import './AllToys.css';
 
 const AllToys = () => {
@@ -13,7 +13,7 @@ const AllToys = () => {
   const { user } = useContext(AuthContext); 
 
   useEffect(() => {
-    fetch('animal-category.json')
+    fetch('http://localhost:5000/category')
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);

@@ -1,6 +1,5 @@
 [
       {
-        "id": 1,
         "picture": "https://images.unsplash.com/photo-1530325553241-4f6e7690cf36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         "toyName": "Dog Chew Toy",
         "subcategory": "Dog Toys",
@@ -10,7 +9,6 @@
         "description": "This durable chew toy is perfect for dogs who love to chew. It helps promote dental health and provides hours of entertainment."
       },
       {
-        "id": 2,
         "picture": "https://images.unsplash.com/photo-1581312742770-ce89199554af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Interactive Cat Toy",
         "subcategory": "Cat Toys",
@@ -20,7 +18,6 @@
         "description": "Keep your cat entertained with this interactive toy. It features feathers and a dangling ball to stimulate their natural hunting instincts."
       },
       {
-        "id": 3,
         "picture": "https://images.unsplash.com/photo-1543886151-3bc2b944c718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Plush Bear Toy",
         "subcategory": "Bear Toys",
@@ -30,7 +27,6 @@
         "description": "This soft and cuddly bear toy is perfect for snuggling. It's made of high-quality materials and is safe for children of all ages."
       },
       {
-        "id": 4,
         "picture": "https://images.unsplash.com/photo-1556012018-50c5c0da73bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Squeaky Dog Toy",
         "subcategory": "Dog Toys",
@@ -40,7 +36,6 @@
         "description": "This squeaky dog toy will keep your pup entertained. It's made of non-toxic materials and is suitable for small to medium-sized dogs."
       },
       {
-        "id": 5,
         "picture": "https://images.unsplash.com/photo-1601361364273-82f1797728b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Catnip Mouse Toy",
         "subcategory": "Cat Toys",
@@ -50,7 +45,6 @@
         "description": "Entice your cat with this catnip-filled mouse toy. It's lightweight and perfect for batting and pouncing."
       },
       {
-        "id": 6,
         "picture": "https://images.unsplash.com/photo-1540981412106-6de4e3c1fc92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Stuffed Bear Pillow",
         "subcategory": "Bear Toys",
@@ -60,7 +54,6 @@
         "description": "This oversized stuffed bear pillow is a great addition to any child's room. It's soft, huggable, and makes a perfect cuddle buddy."
       },
       {
-        "id": 7,
         "picture": "https://images.unsplash.com/photo-1538292999061-16ca3647ab1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1071&q=80",
         "toyName": "Treat Dispensing Dog Toy",
         "subcategory": "Dog Toys",
@@ -70,7 +63,6 @@
         "description": "Challenge your dog's mind with this treat-dispensing toy. Fill it with your dog's favorite treats and watch them work to retrieve them."
       },
       {
-        "id": 8,
         "picture": "https://images.unsplash.com/photo-1585508033002-1ff8b3fee7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Feather Teaser Wand",
         "subcategory": "Cat Toys",
@@ -80,7 +72,6 @@
         "description": "Engage your cat in interactive play with this feather teaser wand. It's designed to mimic the movement of prey and will keep your cat entertained for hours."
       },
       {
-        "id": 9,
         "picture": "https://images.unsplash.com/photo-1562040551-9a7242202cc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=837&q=80",
         "toyName": "Talking Bear Plush Toy",
         "subcategory": "Bear Toys",
@@ -90,7 +81,6 @@
         "description": "This talking bear plush toy will delight children with its cute phrases and cuddly nature. It's the perfect companion for bedtime or playtime."
       },
       {
-        "id": 10,
         "picture": "https://images.unsplash.com/photo-1592059852026-d6ed580b8c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Rope Tug Toy",
         "subcategory": "Dog Toys",
@@ -100,7 +90,6 @@
         "description": "Play a game of tug-of-war with your dog using this durable rope toy. It's great for strengthening your dog's teeth and gums."
       },
       {
-        "id": 11,
         "picture": "https://images.unsplash.com/photo-1592059851980-05470a807b01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Singing Cat Toy",
         "subcategory": "Cat Toys",
@@ -110,7 +99,6 @@
         "description": "Give your cat a place to play, scratch, and relax with this multi-level cat tower. It features built-in scratchers and cozy resting spots."
       },
       {
-        "id": 12,
         "picture": "https://images.unsplash.com/photo-1508076092314-77ad4b6b360a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "toyName": "Musical Bear Plush Toy",
         "subcategory": "Bear Toys",
