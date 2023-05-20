@@ -8,6 +8,8 @@ import { AuthContext } from '../../providers/AuthProvider';
 const NavBar = () => {
   const [navbarShadow, setNavbarShadow] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+  const [photoLoading, setPhotoLoading] = useState(true);
+  const [photoError, setPhotoError] = useState(false);
 
   const handleLogout = () => {
     logOut()
@@ -22,7 +24,6 @@ const NavBar = () => {
       </Tooltip>
     );
   };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +40,22 @@ const NavBar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (user && user.photoURL) {
+      const img = new Image();
+      img.src = user.photoURL;
+      img.onload = () => {
+        setPhotoLoading(false);
+      };
+      img.onerror = () => {
+        setPhotoLoading(false);
+        setPhotoError(true);
+      };
+    } else {
+      setPhotoLoading(false);
+    }
+  }, [user]);
 
   return (
     <Navbar
@@ -60,31 +77,37 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbarScroll"></Navbar.Toggle>
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mx-auto my-2 my-lg-0">
-              <Nav.Item>
-                  <Nav.Link as={Link} to="/">Home</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                  <Nav.Link as={Link} to="/alltoys">All Toys</Nav.Link>
-              </Nav.Item>
-              {user && (
-                <>
-                     <Nav.Item>
-                        <Nav.Link as={Link} to="/mytoys">My Toys</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link as={Link} to="/addtoys">Add Toys</Nav.Link>
-                    </Nav.Item>
-                </>
-              )}
-              <Nav.Item>
-                  <Nav.Link as={Link} to="/blogs">Blog</Nav.Link>
-              </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/alltoys">All Toys</Nav.Link>
+            </Nav.Item>
+            {user && (
+              <>
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/mytoys">My Toys</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/addtoys">Add Toys</Nav.Link>
+                </Nav.Item>
+              </>
+            )}
+            <Nav.Item>
+              <Nav.Link as={Link} to="/blogs">Blog</Nav.Link>
+            </Nav.Item>
           </Nav>
           {user && (
             <Nav.Item>
-              <OverlayTrigger placement="bottom" overlay={renderTooltip()}>
-                <img className="navbar-img m-2" src={user.photoURL} alt="" />
-              </OverlayTrigger>
+              {photoLoading ? (
+                <span>Loading...</span>
+              ) : photoError ? (
+                <span>Error loading photo</span>
+              ) : (
+                <OverlayTrigger placement="bottom" overlay={renderTooltip()}>
+                  <img className="navbar-img m-2" src={user.photoURL} alt="" />
+                </OverlayTrigger>
+              )}
             </Nav.Item>
           )}
 
