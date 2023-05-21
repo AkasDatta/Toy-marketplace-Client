@@ -15,7 +15,7 @@ const AllToys = () => {
   const { user } = useContext(AuthContext); 
 
   useEffect(() => {
-    fetch('http://localhost:5000/category')
+    fetch('https://toy-marketplace-server-pink.vercel.app/category')
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);

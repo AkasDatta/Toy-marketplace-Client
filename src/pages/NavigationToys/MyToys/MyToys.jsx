@@ -11,7 +11,7 @@ const MyToys = () => {
   const [error, setError] = useState(null);
   useTitle('My Toys');
 
-  const url = `http://localhost:5000/addtoys?email=${user?.email}`;
+  const url = `https://toy-marketplace-server-pink.vercel.app/addtoys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -30,7 +30,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addtoys/${id}`, {
+        fetch(`https://toy-marketplace-server-pink.vercel.app/addtoys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -54,7 +54,7 @@ const MyToys = () => {
   const handleConfirm = id => {
     const proceed = confirm('Are you sure you want to update?');
     if(proceed){
-        fetch(`http://localhost:5000/addtoys/${id}`,{
+        fetch(`https://toy-marketplace-server-pink.vercel.app/addtoys/${id}`,{
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

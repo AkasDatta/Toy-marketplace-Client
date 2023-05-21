@@ -15,7 +15,7 @@ const ShopByCategory = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/category');
+        const response = await fetch('https://toy-marketplace-server-pink.vercel.app/category');
         const data = await response.json();
         setDogToys(data.filter((item) => item.subcategory === 'Dog Toys'));
         setCatToys(data.filter((item) => item.subcategory === 'Cat Toys'));

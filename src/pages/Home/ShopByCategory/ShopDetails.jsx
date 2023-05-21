@@ -13,7 +13,7 @@ const ShopDetails = () => {
   useEffect(() => {
     const fetchToy = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/category/${id}`);
+        const response = await fetch(`https://toy-marketplace-server-pink.vercel.app/category/${id}`);
         const data = await response.json();
         setToy(data);
       } catch (error) {
