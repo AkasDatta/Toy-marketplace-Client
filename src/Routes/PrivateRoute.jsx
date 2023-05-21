@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const PrivateRoute = ({children}) => {
     const {user, loading} = useContext(AuthContext);
@@ -19,7 +20,7 @@ const PrivateRoute = ({children}) => {
     if(user?.email){
         return children;
     }
-    alert('You have to login first');
+    Swal.fire('You have to log in first to view details')
     return (
         
     <div >
