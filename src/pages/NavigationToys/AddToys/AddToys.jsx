@@ -163,7 +163,6 @@ const AddToys = () => {
                 placeholder="Available Quantity"
                 required
                 onChange={(e) => {
-                
                 }}
                 />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>

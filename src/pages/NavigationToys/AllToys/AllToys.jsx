@@ -9,6 +9,7 @@ const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
   const [selectedToy, setSelectedToy] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
   useTitle('All Toys');
 
@@ -29,6 +30,16 @@ const AllToys = () => {
     }
   };
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    // Perform search logic on the client-side
+    const filteredToys = allToys.filter((toy) =>
+      toy.toyName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setAllToys(filteredToys);
+  };
+
+
   const displayedToys = allToys.slice(0, 20);
 
   return (
@@ -36,12 +47,19 @@ const AllToys = () => {
       
       <h1 className="text-center my-5 fw-bold" style={{ color: '#7fa7e4' }}>All Toys Here</h1>
       <div className='d-flex justify-content-end container mb-4'>
-        <Form action="/search" method="GET" className='d-flex'>
+        <Form onSubmit={handleSearch} className='d-flex'>
           <div>
-            <input className='input-field-alltoys' type="text" name="query" placeholder="Type here" />
+            <input
+              className='input-field-alltoys'
+              type="text"
+              name="query"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
           <div>
-            <Button type="submit" className='btn-danger mx-2 p-2'>Sorting</Button>
+            <Button className='btn btn-secondary mx-2 py-2' type="submit">Search</Button>
           </div>
         </Form>
       </div>

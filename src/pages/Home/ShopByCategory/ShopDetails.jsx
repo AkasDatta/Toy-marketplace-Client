@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Card, Col, Row } from 'react-bootstrap';
 import useTitle from '../../../hooks/useTitle';
+import Rating from 'react-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const ShopDetails = () => {
   const { id } = useParams();
@@ -39,8 +41,18 @@ const ShopDetails = () => {
               <h6><b>Seller Name:</b> {user.displayName}</h6>
               <h6><b>Seller Email:</b> {user.email}</h6>
               <p><b>Price:</b> ${toy.price}</p>
-              <p><b>Rating:</b> ${toy.rating}</p>
-              <p><b>Available Quantity:</b> ${toy.quantity}</p>
+              <p>
+                  <b>Ratings:</b>{' '}
+                  <Rating
+                    placeholderRating={toy.rating}
+                    readonly
+                    emptySymbol={<FaRegStar></FaRegStar>}
+                    placeholderSymbol={<FaStar className="text-danger"></FaStar>}
+                    fullSymbol={<FaStar></FaStar>}
+                    ></Rating>{' '}
+                    {toy.rating}
+                </p>
+              <p><b>Available Quantity:</b> {toy.quantity}</p>
               <p><b>Description:</b> {toy.description}</p>
             </Card.Text>
           </Card.Body>

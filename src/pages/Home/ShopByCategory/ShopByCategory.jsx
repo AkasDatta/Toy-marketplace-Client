@@ -12,6 +12,7 @@ const ShopByCategory = () => {
   const [catToys, setCatToys] = useState([]);
   const [bearToys, setBearToys] = useState([]);
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {

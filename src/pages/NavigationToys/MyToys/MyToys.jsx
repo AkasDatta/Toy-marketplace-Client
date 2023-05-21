@@ -7,17 +7,18 @@ import useTitle from "../../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
+  const [asc, setAsc] = useState(true);
   const [addtoys, setAddtoys] = useState([]);
   const [error, setError] = useState(null);
   useTitle('My Toys');
 
-  const url = `https://toy-marketplace-server-pink.vercel.app/addtoys?email=${user?.email}`;
+  const url = `https://toy-marketplace-server-pink.vercel.app/addtoys?email=${user?.email}&sort=${asc ? 'asc' : 'desc'}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddtoys(data))
       .catch((error) => setError(error));
-  }, [url]);
+  }, [asc, url]);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -86,6 +87,14 @@ return (
           <h1 className="text-center my-5 fw-bold" style={{ color: "#7fa7e4" }}>
             My Toys Here
           </h1>
+          <div className="d-flex justify-content-end container mb-4">
+            <button
+                className="btn btn-success mb-5"
+                onClick={() => setAsc(!asc)}
+                  >{asc ? 'Price: High to Low' : 'Price: Low to High'}
+              </button>
+          </div>
+          
           <Table striped bordered hover size="sm">
         <thead>
           <tr>

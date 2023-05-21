@@ -19,7 +19,12 @@ const PrivateRoute = ({children}) => {
     if(user?.email){
         return children;
     }
-    return <Navigate state={{from: location}} to="/login" replace></Navigate>;
+    alert('You have to login first');
+    return (
+        
+    <div >
+        <Navigate state={{from: location}} to="/login" replace></Navigate>
+    </div> )
 };
 
 export default PrivateRoute;
