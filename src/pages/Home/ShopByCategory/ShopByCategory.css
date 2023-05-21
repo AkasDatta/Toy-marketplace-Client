@@ -1,11 +1,12 @@
 .shopbutton {
-    padding: 15px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-top: 20px;
     border-radius: 30px;
     font-weight: bold;
     background-color: #95B3E0;
+    color: black;
 }
 .shopbutton:hover {
     background-color: #f9acb9;
