@@ -3,8 +3,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import 'react-tabs/style/react-tabs.css';
 import './ShopByCategory.css';
-import { FaRegStar, FaStar } from 'react-icons/fa';
+import { FaArrowRight, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
+import { Link } from 'react-router-dom';
 
 const ShopByCategory = () => {
   const [dogToys, setDogToys] = useState([]);
@@ -50,17 +51,24 @@ const ShopByCategory = () => {
                   <Card className="w-100">
                     <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} />
                     <Card.Body>
-                      <Card.Title> {toy.toyName}</Card.Title>
-                        <b>Price:</b> ${toy.price} <br />
-                        <p><b>Ratings:</b> <Rating
-                            placeholderRating={toy.rating}
-                            readonly
-                            emptySymbol={<FaRegStar></FaRegStar>}
-                            placeholderSymbol={<FaStar className='text-danger'></FaStar>}
-                            fullSymbol={<FaStar></FaStar>}
-                        ></Rating> {toy.rating}
-                        </p>
-                      <Button className='shopbutton' variant="primary">View Details</Button>
+                      <Card.Title>{toy.toyName}</Card.Title>
+                      <b>Price:</b> ${toy.price} <br />
+                      <p>
+                        <b>Ratings:</b>{' '}
+                        <Rating
+                          placeholderRating={toy.rating}
+                          readonly
+                          emptySymbol={<FaRegStar></FaRegStar>}
+                          placeholderSymbol={<FaStar className="text-danger"></FaStar>}
+                          fullSymbol={<FaStar></FaStar>}
+                        ></Rating>{' '}
+                        {toy.rating}
+                      </p>
+                      <Link to={`/category/${toy._id}`}>
+                        <Button className="shopbutton" variant="primary">
+                          View Details <FaArrowRight />
+                        </Button>
+                      </Link>
                     </Card.Body>
                   </Card>
                 </Col>
@@ -74,23 +82,30 @@ const ShopByCategory = () => {
             <Row xs={1} md={2} className="g-4">
               {catToys.slice(0, 2).map((toy, index) => (
                 <Col key={index}>
-                <Card className="w-100">
-                  <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} />
-                  <Card.Body>
-                    <Card.Title> {toy.toyName}</Card.Title>
+                  <Card className="w-100">
+                    <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} />
+                    <Card.Body>
+                      <Card.Title>{toy.toyName}</Card.Title>
                       <b>Price:</b> ${toy.price} <br />
-                      <p><b>Ratings:</b> <Rating
-                            placeholderRating={toy.rating}
-                            readonly
-                            emptySymbol={<FaRegStar></FaRegStar>}
-                            placeholderSymbol={<FaStar className='text-danger'></FaStar>}
-                            fullSymbol={<FaStar></FaStar>}
-                        ></Rating> {toy.rating}
-                        </p>
-                    <Button className='shopbutton' variant="primary">View Details</Button>
-                  </Card.Body>
-                </Card>
-              </Col>
+                      <p>
+                        <b>Ratings:</b>{' '}
+                        <Rating
+                          placeholderRating={toy.rating}
+                          readonly
+                          emptySymbol={<FaRegStar></FaRegStar>}
+                          placeholderSymbol={<FaStar className="text-danger"></FaStar>}
+                          fullSymbol={<FaStar></FaStar>}
+                        ></Rating>{' '}
+                        {toy.rating}
+                      </p>
+                      <Link to={`/category/${toy._id}`}>
+                        <Button className="shopbutton" variant="primary">
+                          View Details <FaArrowRight />
+                        </Button>
+                      </Link>
+                    </Card.Body>
+                  </Card>
+                </Col>
               ))}
             </Row>
           </div>
@@ -100,23 +115,30 @@ const ShopByCategory = () => {
           <div className="container">
             <Row xs={1} md={2} className="g-4">
               {bearToys.slice(0, 2).map((toy, index) => (
-               <Col key={index}>
-                <Card className="w-100">
+                <Col key={index}>
+                  <Card className="w-100">
                     <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} />
                     <Card.Body>
-                    <Card.Title> {toy.toyName}</Card.Title>
-                        <b>Price:</b> ${toy.price} <br />
-                        <p><b>Ratings:</b> <Rating
-                            placeholderRating={toy.rating}
-                            readonly
-                            emptySymbol={<FaRegStar></FaRegStar>}
-                            placeholderSymbol={<FaStar className='text-danger'></FaStar>}
-                            fullSymbol={<FaStar></FaStar>}
-                        ></Rating> {toy.rating}
-                        </p>
-                    <Button className='shopbutton' variant="primary">View Details</Button>
+                      <Card.Title>{toy.toyName}</Card.Title>
+                      <b>Price:</b> ${toy.price} <br />
+                      <p>
+                        <b>Ratings:</b>{' '}
+                        <Rating
+                          placeholderRating={toy.rating}
+                          readonly
+                          emptySymbol={<FaRegStar></FaRegStar>}
+                          placeholderSymbol={<FaStar className="text-danger"></FaStar>}
+                          fullSymbol={<FaStar></FaStar>}
+                        ></Rating>{' '}
+                        {toy.rating}
+                      </p>
+                      <Link to={`/category/${toy._id}`}>
+                        <Button className="shopbutton" variant="primary">
+                          View Details <FaArrowRight />
+                        </Button>
+                      </Link>
                     </Card.Body>
-                </Card>
+                  </Card>
                 </Col>
               ))}
             </Row>

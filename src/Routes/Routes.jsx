@@ -10,6 +10,7 @@ import AllToys from "../pages/NavigationToys/AllToys/AllToys";
 import AddToys from "../pages/NavigationToys/AddToys/AddToys";
 import MyToys from "../pages/NavigationToys/MyToys/MyToys";
 import PrivateRoute from "./PrivateRoute";
+import ShopDetails from "../pages/Home/ShopByCategory/ShopDetails";
 
 const router = createBrowserRouter([
     {
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
         {
           path: '/terms',
           element: <Terms></Terms>
-        }
+        },
+        {
+          path: '/category/:id',
+          element: <PrivateRoute><ShopDetails></ShopDetails></PrivateRoute>
+      },
       ]
     },
   ]);
