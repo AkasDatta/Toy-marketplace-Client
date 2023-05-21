@@ -1,6 +1,8 @@
 import Accordion from 'react-bootstrap/Accordion';
+import useTitle from '../../../hooks/useTitle';
 
 const Blogs = () => {
+    useTitle('Blog');
     return (
         <div className='my-5 pt-5 container' style={{color: '#DF01A5'}}>
             <h2 className='fw-bold'>Some blog questions are given below:</h2>

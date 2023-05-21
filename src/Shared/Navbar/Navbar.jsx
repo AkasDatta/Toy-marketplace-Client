@@ -4,12 +4,14 @@ import './Navbar.css';
 import toysLogo from '../../assets/toys_logo.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const NavBar = () => {
   const [navbarShadow, setNavbarShadow] = useState(false);
   const { user, logOut } = useContext(AuthContext);
   const [photoLoading, setPhotoLoading] = useState(true);
   const [photoError, setPhotoError] = useState(false);
+  useTitle('Home')
 
   const handleLogout = () => {
     logOut()

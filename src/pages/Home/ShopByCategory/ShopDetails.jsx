@@ -2,11 +2,13 @@ import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Card, Col, Row } from 'react-bootstrap';
+import useTitle from '../../../hooks/useTitle';
 
 const ShopDetails = () => {
   const { id } = useParams();
   const [toy, setToy] = useState(null);
   const { user } = useContext(AuthContext);
+  useTitle('ShopDetails')
 
   useEffect(() => {
     const fetchToy = async () => {

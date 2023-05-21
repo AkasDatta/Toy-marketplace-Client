@@ -4,8 +4,10 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Footer.css'
 import toysLogo from '../../assets/toys_logo.png';
+import useTitle from '../../hooks/useTitle';
 
 const Footer = () => {
+    useTitle('Home');
     return (
         <div>
             <footer style={{backgroundColor: '#5C5C5C', color:'#FFFFFF'}}>

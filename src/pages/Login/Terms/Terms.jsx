@@ -1,7 +1,9 @@
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const Terms = () => {
+  useTitle('Terms and Condition');
   return (
     <div className='mt-5 pt-5'>
         <Container className="my-5 py-5">

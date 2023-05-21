@@ -2,10 +2,12 @@ import { useContext, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const AddToys = () => {
   const [validated, setValidated] = useState(false);
   const { user } = useContext(AuthContext);
+  useTitle('Add Toys');
 
   const handleSubmit = (event) => {
     event.preventDefault();

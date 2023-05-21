@@ -3,12 +3,14 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import './AllToys.css';
+import useTitle from '../../../hooks/useTitle';
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
   const [selectedToy, setSelectedToy] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+  useTitle('All Toys');
 
   const { user } = useContext(AuthContext); 
 

@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import './ErrorPage.css'
 import error from '../../assets/oops.avif'
+import useTitle from '../../hooks/useTitle';
 
 
 const ErrorPage = () => {
+    useTitle('Error')
     return (
         <div className='text-center error'>
             <img className='errorImg' src={error} alt="" />

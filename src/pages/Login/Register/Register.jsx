@@ -6,6 +6,7 @@ import googleImage from '../../../assets/google.png';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
     const [show, setShow] = useState(false);
@@ -15,6 +16,7 @@ const Register = () => {
     const {createUser, signInWithGoogle} = useContext(AuthContext);
     const [accepted, setAccepted] = useState(false);
     const from = location.state?.from?.pathname || '/';
+    useTitle('Register');
 
     const handleRegister = event => {
         event.preventDefault();

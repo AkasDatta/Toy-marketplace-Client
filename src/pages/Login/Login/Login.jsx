@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleImage from '../../../assets/google.png';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { AuthContext } from '../../../providers/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
     const [show, setShow] = useState(false);
@@ -13,6 +14,7 @@ const Login = () => {
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+    useTitle('Login');
     // console.log('Login page location', location)
     const from = location.state?.from?.pathname || '/';
 

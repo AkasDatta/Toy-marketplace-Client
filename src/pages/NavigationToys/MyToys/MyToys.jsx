@@ -3,11 +3,13 @@ import { Table } from "react-bootstrap";
 import { AuthContext } from "../../../providers/AuthProvider";
 import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [addtoys, setAddtoys] = useState([]);
   const [error, setError] = useState(null);
+  useTitle('My Toys');
 
   const url = `http://localhost:5000/addtoys?email=${user?.email}`;
   useEffect(() => {
