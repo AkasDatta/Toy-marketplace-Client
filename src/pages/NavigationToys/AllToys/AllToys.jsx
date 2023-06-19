@@ -1,9 +1,10 @@
 import { Table, Button, Form, Modal } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import './AllToys.css';
 import useTitle from '../../../hooks/useTitle';
+import Swal from 'sweetalert2';
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
@@ -11,6 +12,7 @@ const AllToys = () => {
   const [showModal, setShowModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
+  const location = useLocation(); 
   useTitle('All Toys');
 
   const { user } = useContext(AuthContext); 
@@ -26,7 +28,18 @@ const AllToys = () => {
       setSelectedToy(toy);
       setShowModal(true);
     } else {
-      navigate('/login');
+      Swal.fire({
+        title: 'Please Log In',
+        text: 'You need to be logged in to view toy details.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Log In',
+        cancelButtonText: 'Cancel',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/login', { state: { from: location.pathname } }); 
+        }
+      });
     }
   };
 

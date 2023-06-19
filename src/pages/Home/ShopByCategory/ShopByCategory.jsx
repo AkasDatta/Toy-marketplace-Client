@@ -12,7 +12,6 @@ const ShopByCategory = () => {
   const [catToys, setCatToys] = useState([]);
   const [bearToys, setBearToys] = useState([]);
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,12 +28,48 @@ const ShopByCategory = () => {
     fetchData();
   }, []);
 
+  const renderCard = (toys) => {
+    return (
+      <Row xs={1} md={3} className="g-4">
+        {toys.slice(0, 3).map((toy, index) => (
+          <Col key={index}>
+            <Card className="w-100">
+              <div className="card-image-container">
+                <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} className="card-image mb-0 pb-0" />
+              </div>
+              <Card.Body className='pt-0'>
+                <Card.Title>{toy.toyName}</Card.Title>
+                <b>Price:</b> ${toy.price} <br />
+                <p>
+                  <b>Ratings: </b>{' '}
+                  <Rating
+                    placeholderRating={toy.rating}
+                    readonly
+                    emptySymbol={<FaRegStar></FaRegStar>}
+                    placeholderSymbol={<FaStar className="text-danger"></FaStar>}
+                    fullSymbol={<FaStar></FaStar>}
+                  ></Rating>{' '}
+                  {toy.rating}
+                </p>
+                <Link to={`/category/${toy._id}`}>
+                  <Button className="shopbutton mb-3" variant="primary">
+                    View Details <FaArrowRight />
+                  </Button>
+                </Link>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    );
+  };
+
   return (
     <div className="container py-5">
-      <h1 className="text-center my-5 fw-bold" style={{ color: '#F379A7' }}>
-        Shop By Category
+      <h1 className="text-center mt-5 fw-bold" style={{ color: '#F379A7' }}>
+        Shop Category
       </h1>
-
+      <p className='text-center mb-5 mt-3'>Explore a variety of high-quality animal toys designed to entertain and engage your pets. Find interactive playthings and cozy companions for dogs, cats, and bears.</p>
       <Tabs>
         <div className="text-center mb-5">
           <TabList>
@@ -46,103 +81,19 @@ const ShopByCategory = () => {
 
         <TabPanel>
           <div className="container">
-            <Row xs={1} md={2} className="g-4">
-              {dogToys.slice(0, 2).map((toy, index) => (
-                <Col key={index}>
-                  <Card className="w-100">
-                    <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} />
-                    <Card.Body>
-                      <Card.Title>{toy.toyName}</Card.Title>
-                      <b>Price:</b> ${toy.price} <br />
-                      <p>
-                        <b>Ratings:</b>{' '}
-                        <Rating
-                          placeholderRating={toy.rating}
-                          readonly
-                          emptySymbol={<FaRegStar></FaRegStar>}
-                          placeholderSymbol={<FaStar className="text-danger"></FaStar>}
-                          fullSymbol={<FaStar></FaStar>}
-                        ></Rating>{' '}
-                        {toy.rating}
-                      </p>
-                      <Link to={`/category/${toy._id}`}>
-                        <Button className="shopbutton" variant="primary">
-                          View Details <FaArrowRight />
-                        </Button>
-                      </Link>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
+            {renderCard(dogToys)}
           </div>
         </TabPanel>
 
         <TabPanel>
           <div className="container">
-            <Row xs={1} md={2} className="g-4">
-              {catToys.slice(0, 2).map((toy, index) => (
-                <Col key={index}>
-                  <Card className="w-100">
-                    <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} />
-                    <Card.Body>
-                      <Card.Title>{toy.toyName}</Card.Title>
-                      <b>Price:</b> ${toy.price} <br />
-                      <p>
-                        <b>Ratings:</b>{' '}
-                        <Rating
-                          placeholderRating={toy.rating}
-                          readonly
-                          emptySymbol={<FaRegStar></FaRegStar>}
-                          placeholderSymbol={<FaStar className="text-danger"></FaStar>}
-                          fullSymbol={<FaStar></FaStar>}
-                        ></Rating>{' '}
-                        {toy.rating}
-                      </p>
-                      <Link to={`/category/${toy._id}`}>
-                        <Button className="shopbutton" variant="primary">
-                          View Details <FaArrowRight />
-                        </Button>
-                      </Link>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
+            {renderCard(catToys)}
           </div>
         </TabPanel>
 
         <TabPanel>
           <div className="container">
-            <Row xs={1} md={2} className="g-4">
-              {bearToys.slice(0, 2).map((toy, index) => (
-                <Col key={index}>
-                  <Card className="w-100">
-                    <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} />
-                    <Card.Body>
-                      <Card.Title>{toy.toyName}</Card.Title>
-                      <b>Price:</b> ${toy.price} <br />
-                      <p>
-                        <b>Ratings:</b>{' '}
-                        <Rating
-                          placeholderRating={toy.rating}
-                          readonly
-                          emptySymbol={<FaRegStar></FaRegStar>}
-                          placeholderSymbol={<FaStar className="text-danger"></FaStar>}
-                          fullSymbol={<FaStar></FaStar>}
-                        ></Rating>{' '}
-                        {toy.rating}
-                      </p>
-                      <Link to={`/category/${toy._id}`}>
-                        <Button className="shopbutton" variant="primary">
-                          View Details <FaArrowRight />
-                        </Button>
-                      </Link>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
+            {renderCard(bearToys)}
           </div>
         </TabPanel>
       </Tabs>
