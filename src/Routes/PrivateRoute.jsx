@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const PrivateRoute = ({children}) => {
     const {user, loading} = useContext(AuthContext);
     const location = useLocation();
-    console.log('User in privateroute', user);
+    // console.log('User in privateroute', user);
 
     if(loading){
         return ( 

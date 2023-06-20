@@ -45,13 +45,13 @@ const AddToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        Swal.fire(
+          'Thank you!',
+          'A toys added successfully',
+          'success'
+        )
         if(data.insertedId){
-            Swal.fire(
-                'Thank you!',
-                'Add a toys auccessfully',
-                'success'
-              )
+         console.log(data);
         }
       });
 
