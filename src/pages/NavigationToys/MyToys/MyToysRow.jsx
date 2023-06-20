@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 
 const MyToysRow = ({ addtoy, handleDelete, handleConfirm }) => {
   const {
@@ -59,24 +59,34 @@ const MyToysRow = ({ addtoy, handleDelete, handleConfirm }) => {
 
         {/* modal  */}
         <Modal show={showModal} onHide={handleCloseModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>Update Toy</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p>Modal content here...</p>
-            <h3>Product Price: {price}</h3>
-            <p>Product Quantity: {quantity}</p>
-            <p>Description:{description}</p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleConfirmUpdate}>
-              Update
-            </Button>
-          </Modal.Footer>
-        </Modal>
+        <Modal.Header closeButton>
+          <Modal.Title>Update Toy</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="formPrice">
+              <Form.Label>Product Price</Form.Label>
+              <Form.Control type="number" defaultValue={price} />
+            </Form.Group>
+            <Form.Group controlId="formQuantity">
+              <Form.Label>Product Quantity</Form.Label>
+              <Form.Control type="number" defaultValue={quantity} />
+            </Form.Group>
+            <Form.Group controlId="formDescription">
+              <Form.Label>Description</Form.Label>
+              <Form.Control as="textarea" rows={3} defaultValue={description} />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleConfirmUpdate}>
+            Update
+          </Button>
+        </Modal.Footer>
+      </Modal>
       </td>
       <td>
         <Button onClick={() => handleDelete(_id)} className="btn btn-secondary">

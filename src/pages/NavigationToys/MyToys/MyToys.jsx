@@ -56,7 +56,7 @@ const MyToys = () => {
     const proceed = confirm('Are you sure you want to update?');
     if(proceed){
         fetch(`https://toy-marketplace-server-pink.vercel.app/addtoys/${id}`,{
-            method: 'PATCH',
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -64,15 +64,14 @@ const MyToys = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             if(data.modifiedCount > 0){
                 alert('Updated successfully');
                 // update state
-                const remaining = addtoys.filter(addtoy => addtoy._id !== id);
-                const updated = addtoys.find(addtoy => addtoy._id === id);
-                updated.status = "confirm"
-                const newUpdates = [updated, ...remaining];
-                setAddtoys(newUpdates);
+                // const remaining = addtoys.filter(addtoy => addtoy._id !== id);
+                // const updated = addtoys.find(addtoy => addtoy._id === id);
+                // updated.status = "confirm"
+                // const newUpdates = [updated, ...remaining];
+                // setAddtoys(newUpdates);
             }
         })
     }
