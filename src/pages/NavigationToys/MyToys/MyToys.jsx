@@ -20,7 +20,7 @@ const MyToys = () => {
       .catch((error) => setError(error));
   }, [asc, url]);
 
-  const handleDelete = (id) => {
+  const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -31,7 +31,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://toy-marketplace-server-pink.vercel.app/addtoys/${id}`, {
+        fetch(`https://toy-marketplace-server-pink.vercel.app/addtoys/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -39,7 +39,7 @@ const MyToys = () => {
             console.log(data);
             if (data.deletedCount > 0) {
               const remaining = addtoys.filter(
-                (addtoy) => addtoy._id !== id
+                (addtoy) => addtoy._id !== _id
               );
               setAddtoys(remaining);
             }
@@ -52,7 +52,7 @@ const MyToys = () => {
   };
 
 
-  const handleConfirm = id => {
+  const handleConfirm = (id) => {
     const proceed = confirm('Are you sure you want to update?');
     if(proceed){
         fetch(`https://toy-marketplace-server-pink.vercel.app/addtoys/${id}`,{
@@ -65,7 +65,8 @@ const MyToys = () => {
         .then(res => res.json())
         .then(data => {
             if(data.modifiedCount > 0){
-                alert('Updated successfully');
+              console.log(data);
+                alert('Toy Updated successfully');
                 // update state
                 // const remaining = addtoys.filter(addtoy => addtoy._id !== id);
                 // const updated = addtoys.find(addtoy => addtoy._id === id);

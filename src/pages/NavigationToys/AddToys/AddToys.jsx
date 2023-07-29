@@ -45,14 +45,14 @@ const AddToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        Swal.fire(
-          'Thank you!',
-          'A toys added successfully',
-          'success'
-        )
-        if(data.insertedId){
-         console.log(data);
+        if (data.insertedId) {
+          console.log(data);
         }
+        Swal.fire(
+          "Thank you!",
+          "A toy added successfully",
+          "success"
+        );
       });
 
 
@@ -96,7 +96,7 @@ const AddToys = () => {
         <Row className="mb-3">
             <Form.Group controlId="validationCustom07" className="mb-3">
                 <Form.Label>Photo URL</Form.Label>
-                <Form.Control type="text" name="photo" placeholder="Photo URL" required />
+                <Form.Control type="text" name="photo" placeholder="Photo URL" />
                 <Form.Control.Feedback type="invalid">
                 Please provide a valid photo URL.
                 </Form.Control.Feedback>
@@ -120,7 +120,6 @@ const AddToys = () => {
             <Form.Group as={Col} md="6" controlId="validationCustom02">
                 <Form.Label>Sub Category</Form.Label>
                 <Form.Control
-                required
                 type="text"
                 placeholder="Sub Category"
                 name="subcategory"
@@ -145,7 +144,6 @@ const AddToys = () => {
                 name="rating"
                 type="number"
                 placeholder="Rating"
-                required
                 onChange={(e) => {
                 
                 }}
@@ -161,7 +159,6 @@ const AddToys = () => {
                 name="quantity"
                 type="number"
                 placeholder="Available Quantity"
-                required
                 onChange={(e) => {
                 }}
                 />
@@ -178,7 +175,6 @@ const AddToys = () => {
 
         <Form.Group controlId="validationCustom06" className="mb-3">
           <Form.Check
-            required
             label="Agree to terms and conditions"
             feedback="You must agree before submitting."
             feedbackType="invalid"
