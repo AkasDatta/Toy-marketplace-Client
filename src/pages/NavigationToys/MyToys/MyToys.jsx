@@ -47,7 +47,7 @@ const MyToys = () => {
           .catch((error) => {
             console.log("Error deleting toy:", error);
           });
-      }
+      }n
     });
   };
 

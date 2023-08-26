@@ -7,7 +7,7 @@ import './BeneFit.css';
 const BeneFit = () => {
   return (
     <div className='container'>
-      <h1 className="text-center my-5 fw-bold" style={{ color: '#7fa7e4' }}>Your Benefits</h1>
+      <h1 className="text-center my-5 fw-bold" style={{ color: '#7fa7e4' }}>Benefits for You</h1>
         <Row className="row-cols-1 row-cols-md-3 g-4 text-center mb-5">
             <Col>
                 <Card className='h-100 py-5 benefit-card'>

@@ -30,14 +30,14 @@ const ShopByCategory = () => {
 
   const renderCard = (toys) => {
     return (
-      <Row xs={1} md={3} className="g-4">
-        {toys.slice(0, 3).map((toy, index) => (
+      <Row xs={1} md={4} className="g-4">
+        {toys.slice(0, 4).map((toy, index) => (
           <Col key={index}>
             <Card className="w-100">
               <div className="card-image-container">
                 <Card.Img data-aos="zoom-in" variant="top" src={toy.picture} className="card-image mb-0 pb-0" />
               </div>
-              <Card.Body className='pt-0'>
+              <Card.Body className="pt-0">
                 <Card.Title>{toy.toyName}</Card.Title>
                 <b>Price:</b> ${toy.price} <br />
                 <p>
@@ -69,33 +69,31 @@ const ShopByCategory = () => {
       <h1 className="text-center mt-5 fw-bold" style={{ color: '#F379A7' }}>
         Shop Category
       </h1>
-      <p className='text-center mb-5 mt-3'>Explore a variety of high-quality animal toys designed to entertain and engage your pets. Find interactive playthings and cozy companions for dogs, cats, and bears.</p>
+      <p className="text-center mb-5 mt-3">
+        Explore a variety of high-quality animal toys designed to entertain and engage your pets. Find interactive
+        playthings and cozy companions for dogs, cats, and bears.
+      </p>
       <Tabs>
         <div className="text-center mb-5">
           <TabList>
+            <Tab>Bear Toys</Tab>
             <Tab>Dog Toys</Tab>
             <Tab>Cat Toys</Tab>
-            <Tab>Bear Toys</Tab>
           </TabList>
         </div>
 
         <TabPanel>
-          <div className="container">
-            {renderCard(dogToys)}
-          </div>
+          <div className="container">{renderCard(bearToys)}</div>
+        </TabPanel>
+        
+        <TabPanel>
+          <div className="container">{renderCard(dogToys)}</div>
         </TabPanel>
 
         <TabPanel>
-          <div className="container">
-            {renderCard(catToys)}
-          </div>
+          <div className="container">{renderCard(catToys)}</div>
         </TabPanel>
 
-        <TabPanel>
-          <div className="container">
-            {renderCard(bearToys)}
-          </div>
-        </TabPanel>
       </Tabs>
     </div>
   );
